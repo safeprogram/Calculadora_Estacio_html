@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora DIS</title>
+  <style>
+    .texto{
+        text-align: justify;
+        margin-right: 30px
+    }
+    .cabeçalho{
+        color: rgb(0, 0, 0);
+        background-color: rgb(102, 182, 228);
+    }
+    .regulamento{
+        color: rgb(255, 255, 255);
+        background-color: blue;
+    }
+    .menu
+        header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    }
+  
+    nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+  
+    nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+    }
+  
+    nav ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  </style>
+</head>
+<div class="menu">
+    <!--Menu-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="">ESTÁCIO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="https://estacio.br/a-estacio/sobre-a-estacio">A Estácio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://estacio.br/cursos/graduacao">Cursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="file:///C:/Users/usuario/Desktop/Trabalho%20Logica%20de%20Programa%C3%A7%C3%A3o/InterfaceCalculadoraBotao.html">Diluição</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://estacio.br/estude-na-estacio/nossa-graduacao">Para começar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://estacio.br/inscricao/formulario#cursos">Inscreva-se</a>
+          </li>
+        </ul>
+      </div>
+    </nav></div>
+<body class="texto">
+    <div class="cabeçalho">   
+        <h1>Conheça a DIS e inicie o seu sonho</h1>
+            <p>Você sempre sonhou em começar uma graduação e agora a Estácio quer dar 
+              uma mãozinha para focar nos estudos, sem se preocupar com as primeiras mensalidades.</p>
+    <br></div>
+<h1>O que é a DIS?</h1>
+    <p><b>DIS é a Diluição Solidária da Estácio.</b> Você paga R$ 49,00 no(s) primeiro(s) mês(es) e a diferença do valor 
+    integral dessa mensalidade é diluída ao longo de todos os semestres até o fim do curso. <b>Importante reforçar
+    que a DIS não é uma bolsa, mas sim uma diluição das mensalidades.</b>
+    Todos os alunos na graduação presencial ou a distância já entram automaticamente com esse incentivo, 
+    em qualquer modelo de ensino*. É a Estácio facilitando o seu sonho e de milhares de estudantes de todo 
+    o país.</p>
+    <p><b>Inicie seu sonho:</b> escolha o seu curso e inicie os estudos pagando R$ 49,00 nos três primeiros meses.</p>
+    <p><b>Dilua as três primeiras mensalidades:</b> pague a diferença do valor integral destas mensalidades em parcelas 
+    diluídas até o fim do seu curso.</p>
+    <p><b>Tenha flexibilidade:</b> antecipe a sua diluição quando e se desejar.</p>
+<!--Resultado da calculadora-->  
+    <h3>Com sua escolha de curso e diluição, sua mensalidade será:</h3>
+         <script>
+        alert("Seja bem-vindo!")
+ let novaConsulta = true;
+
+//Declaração de variaveis.
+var curso =0 , duração=0, valorIntegral=0, parceDis, DIS=0, res=0, des=0, pontVest=0, bolsaPadrão=0, valDesc=0;
+
+//Laço
+while (novaConsulta){ 
+
+//Programa 
+curso=(prompt("O curso selecionado é: "))
+valorIntegral= Number(prompt("O valor integral do curso é: "))
+duração=Number(prompt("O curso terá duração em meses de: "))
+DIS=49
+parceDis=prompt("Digite a quantidade de DIS que deseja utilizando DIS1 DIS2 DIS3 ou 0: ")
+
+//Escolha da DIS que será adquirida e seu valor.
+switch (parceDis.toLowerCase()) {
+    
+    case 'dis1':
+        res =(valorIntegral-DIS)/(duração-1);
+        document.write("O valor da parcela DIS adquirindo a DIS1 é: ", res);
+        break
+    case 'dis2':
+        res =(valorIntegral-DIS)*2/(duração-2);
+        document.write("O valor da parcela DIS adquirindo a DIS2 é: ", res);
+        break
+    case 'dis3':
+        res =(valorIntegral-DIS)*3/(duração-3);
+        document.write("O valor da parcela DIS adquirindo a DIS3 é: ", res);
+        break
+    default:
+        document.write('SEM DIS')
+}
+
+//Valor com Desconto
+valDesc=prompt("Digite a porcentagem de bolsa adquirida sendo 20%, 50%, 70%, ou 100%: ")
+switch (valDesc) {
+    
+    case '20%':
+        desc =(valorIntegral - (valorIntegral * 0.20));
+        document.write(". Sua mensalidade com 20% ficara: ", desc);
+        break
+    case '50%':
+        desc =(valorIntegral - (valorIntegral * 0.50));
+        document.write(". Sua mensalidade com 50% ficara: ", desc);
+        break
+    case '70%':
+        desc =(valorIntegral - (valorIntegral * 0.70));
+        document.write(". Sua mensalidade com 70% ficara: ", desc);
+        break
+    case '100%':
+        desc =(valorIntegral - (valorIntegral * 1));
+        document.write(". Sua mensalidade com 100% ficara: ", desc);
+        break
+    default:
+        document.write('. SEM DESCONTO')
+}
+
+//Valor que será pago pelo candidato com desconto e DIS.
+
+var mensalidadeFinal=0.
+
+mensalidadeFinal= (desc + res)
+document.write(". Realizando o ingresso no curso de ", curso, " , você terá sua mensalidade final no valor de R$ ", mensalidadeFinal,".")
+
+//final do laço
+var calcular = prompt("Deseja realizar uma nova consulta? SIM ou NAO: ")
+
+if (calcular.toLowerCase()!== 'sim'){
+    novaConsulta = false;
+    console.log("Muito obrigada pela visita :)")
+}
+}
+
+  </script>
+<br>
+<br>
+<br>
+<div class="regulamento"></div>
+<h2>Regulamento DIS</h2>
+<p>Leia o Regulamento e obtenha mais informações sobre a diluição e suas condições 
+em <a href="https://portal.estacio.br/estude-na-estacio/regulamentos-informacoes-legais/">DIS</a></p>
+</div>
+</body>
+</html>
